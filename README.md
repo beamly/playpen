@@ -1,7 +1,7 @@
 # Playpen: A way to Play! safely
 
 [![Latest Version](https://maven-badges.herokuapp.com/maven-central/com.beamly.playpen/playpen_11/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.beamly.playpen/playpen_11)
-[![License](http://img.shields.io/:license-Apache%202-red.svg)](http://www.apache.org/licenses/LICENSE-2.0.txt) 
+[![License](http://img.shields.io/:license-Apache%202-red.svg)](http://www.apache.org/licenses/LICENSE-2.0.txt)
 [![Scaladoc](http://img.shields.io/:docs-Scaladoc-orange.svg)](http://beamly.github.io/playpen/latest/api)
 
 [![Build Status](https://travis-ci.org/beamly/playpen.svg?branch=master)](https://travis-ci.org/beamly/playpen)
@@ -37,6 +37,32 @@ Add HttpAccessLoggingFilter to Global like so:
 import playpen.HttpAccessLoggingFilter
 
 object Global extends WithFilters(HttpAccessLoggingFilter)
+```
+
+#### CORS support
+
+Add CorsFilter to append CORS headers to every HTTP request.
+
+```scala
+import playpen.cors.filters.CorsFilter
+
+object Global extends WithFilters(CorsFilter)
+```
+
+Use the Cors controller to send the headers back for every OPTIONS request.
+
+```
+OPTIONS  /*all    playpen.cors.controllers.Cors.preflight(all)
+```
+
+Configure it in application.conf
+
+```
+# ["*"] can be used to authorize any origin.
+playpen.cors.allowed.origins=[domain1.com, domain2.com]
+
+# The default list of methods is [POST, GET, OPTIONS, PUT, DELETE]
+playpen.cors.allowed.methods=[OPTIONS, GET, PUT]
 ```
 
 Dependencies
