@@ -1,6 +1,6 @@
 # Playpen: A way to Play! safely
 
-[![Latest Version](https://maven-badges.herokuapp.com/maven-central/com.beamly.playpen/playpen_11/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.beamly.playpen/playpen_11)
+[![Latest Version](https://maven-badges.herokuapp.com/maven-central/com.beamly.playpen/playpen_2.11/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.beamly.playpen/playpen_2.11)
 [![License](http://img.shields.io/:license-Apache%202-red.svg)](http://www.apache.org/licenses/LICENSE-2.0.txt)
 [![Scaladoc](http://img.shields.io/:docs-Scaladoc-orange.svg)](http://beamly.github.io/playpen/latest/api)
 
