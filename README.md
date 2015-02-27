@@ -16,7 +16,7 @@ A general suite of utilities and other common code when building Play apps.
 
 For _sbt_:
 
-```"com.beamly.playpen" %% "playpen" % "0.1.1"```
+```"com.beamly.playpen" %% "playpen" % "0.1.2"```
 
 For _maven_:
 
@@ -24,7 +24,7 @@ For _maven_:
 <dependency>
   <groupId>com.beamly.playpen</groupId>
   <artifactId>playpen_${scala.binary}</artifactId>
-  <version>0.1.1</version>
+  <version>0.1.2</version>
 </dependency>
 ```
 (where `scala.binary` is defined somewhere as `2.11`)
