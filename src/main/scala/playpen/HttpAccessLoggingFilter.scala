@@ -14,6 +14,9 @@ object HttpAccessLoggingFilter extends EssentialFilter {
   private val log = LoggerFactory getLogger "HttpAccessLogger"
   private val dateTimeFmt = DateTimeFormat forPattern "EEE MMM dd HH:mm:ss zzz yyyy"
 
+  // Non-RFC headers
+  private val X_REQUEST_ID = "X-Request-Id"
+
   def apply(nextFilter: EssentialAction) = new EssentialAction {
     def apply(rh: RequestHeader) = {
       val startTime = DateTime now DateTimeZone.UTC
@@ -31,8 +34,8 @@ object HttpAccessLoggingFilter extends EssentialFilter {
           "req.ipAddresses" → rh.remoteAddress,
           "req.userAgent"   → (rh.headers get USER_AGENT getOrElse "-"),
         // TODO: Figure out how to really do Play response size
-          "rsp.size"        → (result.header.headers get CONTENT_LENGTH getOrElse "0"))
-        // TODO: requestId
+          "rsp.size"        → (result.header.headers get CONTENT_LENGTH getOrElse "0"),
+          "requestId"       → (result.header.headers get X_REQUEST_ID getOrElse "-"))
 
         val oldContextMap = Option(MDC.getCopyOfContextMap) getOrElse new ju.HashMap[String, String]()
         try {
