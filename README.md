@@ -75,7 +75,12 @@ playpen.cors.allowed.methods=[OPTIONS, GET, PUT]
 ## How to Release
 
 * Bump version in README
-* `sbt release sonatypeRelease`
+* `sbt release`, responding to prompt as such (for example):
+    Release (relative) version: 3
+    Next release series [0.1]: [CTRL-D]
+    [info] Not bumping release series
+    Next (relative) version: 4-SNAPSHOT
+* `sbt sonatypeRelease`
 * `git push --follow-tags`
 * git checkout the tag again
 * `sbt ghpagesPushSite`
