@@ -65,10 +65,17 @@ playpen.cors.allowed.origins=[domain1.com, domain2.com]
 playpen.cors.allowed.methods=[OPTIONS, GET, PUT]
 ```
 
-Dependencies
-------------
+## Dependencies
 
 * Scala 2.11.x
 * JodaTime 2.x
 * Play 2.3.x
 * Slf4J 1.7.x
+
+## How to Release
+
+* Bump version in README
+* `sbt release sonatypeRelease`
+* `git push --follow-tags`
+* git checkout the tag again
+* `sbt ghpagesPushSite`
