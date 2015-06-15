@@ -31,45 +31,25 @@ For _maven_:
 
 #### Configure playpen.HttpAccessLoggingFilter
 
-Add HttpAccessLoggingFilter to Global like so:
+Add HttpAccessLoggingFilter to the list of http filters.
 
+If you are using runtime dependency injection, follow the Play documentation https://www.playframework.com/documentation/2.4.0/ScalaHttpFilters#Using-filters.
+
+If you are using compile time dependency injection, add the `HttpAccessLoggingFilter` to `httpFilters` as in:
 ```scala
 import playpen.HttpAccessLoggingFilter
 
-object Global extends WithFilters(HttpAccessLoggingFilter)
-```
-
-#### CORS support
-
-Add CorsFilter to append CORS headers to every HTTP request.
-
-```scala
-import playpen.cors.filters.CorsFilter
-
-object Global extends WithFilters(CorsFilter)
-```
-
-Use the Cors controller to send the headers back for every OPTIONS request.
-
-```
-OPTIONS  /*all    playpen.cors.controllers.Cors.preflight(all)
-```
-
-Configure it in application.conf
-
-```
-# ["*"] can be used to authorize any origin.
-playpen.cors.allowed.origins=[domain1.com, domain2.com]
-
-# The default list of methods is [POST, GET, OPTIONS, PUT, DELETE]
-playpen.cors.allowed.methods=[OPTIONS, GET, PUT]
+class MyComponents(context: Context) extends BuiltInComponentsFromContext(context) {
+  lazy val router = Router.empty
+  override lazy val httpFilters = Seq(HttpAccessLoggingFilter)
+}
 ```
 
 ## Dependencies
 
 * Scala 2.11.x
 * JodaTime 2.x
-* Play 2.3.x
+* Play 2.4.x
 * Slf4J 1.7.x
 
 ## How to Release
