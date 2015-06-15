@@ -56,7 +56,7 @@ object Build extends Build {
     startYear := Some(2014),
     licenses := Seq("Apache License, Version 2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0.txt")),
 
-    scalaVersion := "2.11.5",
+    scalaVersion := "2.11.6",
     crossScalaVersions := Seq(scalaVersion.value, "2.10.4"),
 
     scalacOptions ++= Seq("-encoding", "utf8"),
@@ -81,7 +81,7 @@ object Build extends Build {
 
     libraryDependencies += "joda-time"          % "joda-time"    % "2.5",
     libraryDependencies += "org.joda"           % "joda-convert" % "1.2",
-    libraryDependencies += "com.typesafe.play" %% "play"         % "2.3.6",
+    libraryDependencies += "com.typesafe.play" %% "play"         % "2.4.0",
     libraryDependencies += "org.slf4j"          % "slf4j-api"    % "1.7.7",
 
     typelevelDefaultSettings,
