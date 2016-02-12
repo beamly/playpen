@@ -1,22 +1,22 @@
 <!DOCTYPE html >
 <html>
         <head>
-          <title>HttpAccessLoggingFilter - playpen.HttpAccessLoggingFilter</title>
-          <meta name="description" content="HttpAccessLoggingFilter - playpen.HttpAccessLoggingFilter" />
-          <meta name="keywords" content="HttpAccessLoggingFilter playpen.HttpAccessLoggingFilter" />
+          <title>RequestIdTransformer - playpen.requestid.RequestIdTransformer</title>
+          <meta name="description" content="RequestIdTransformer - playpen.requestid.RequestIdTransformer" />
+          <meta name="keywords" content="RequestIdTransformer playpen.requestid.RequestIdTransformer" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
-      <link href="../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
-      <link href="../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
-      <script type="text/javascript" src="../lib/jquery.js" id="jquery-js"></script>
-      <script type="text/javascript" src="../lib/jquery-ui.js"></script>
-      <script type="text/javascript" src="../lib/template.js"></script>
-      <script type="text/javascript" src="../lib/tools.tooltip.js"></script>
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
       
       <script type="text/javascript">
          if(top === self) {
-            var url = '../index.html';
-            var hash = 'playpen.HttpAccessLoggingFilter$';
+            var url = '../../index.html';
+            var hash = 'playpen.requestid.RequestIdTransformer$';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -28,13 +28,13 @@
         </head>
         <body class="value">
       <div id="definition">
-        <img src="../lib/object_big.png" />
-        <p id="owner"><a href="package.html" class="extype" name="playpen">playpen</a></p>
-        <h1>HttpAccessLoggingFilter</h1><h3><span class="morelinks"><div>Related Doc:
-            <a href="package.html" class="extype" name="playpen">package playpen</a>
+        <img src="../../lib/object_big.png" />
+        <p id="owner"><a href="../package.html" class="extype" name="playpen">playpen</a>.<a href="package.html" class="extype" name="playpen.requestid">requestid</a></p>
+        <h1>RequestIdTransformer</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="package.html" class="extype" name="playpen.requestid">package requestid</a>
           </div></span></h3><span class="permalink">
-      <a href="../index.html#playpen.HttpAccessLoggingFilter$" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" />
+      <a href="../../index.html#playpen.requestid.RequestIdTransformer$" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
       </a>
     </span>
       </div>
@@ -45,13 +45,13 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <span class="name">HttpAccessLoggingFilter</span><span class="result"> extends <span class="extype" name="play.api.mvc.EssentialFilter">EssentialFilter</span></span>
+        <span class="name">RequestIdTransformer</span><span class="result"> extends <span class="extype" name="play.api.mvc.ActionTransformer">ActionTransformer</span>[<span class="extype" name="play.api.mvc.Request">Request</span>, <a href="RequestIdRequest.html" class="extype" name="playpen.requestid.RequestIdRequest">RequestIdRequest</a>]</span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/beamly/playpen/blob/v0.2.1/src/main/scala/playpen/HttpAccessLoggingFilter.scala" target="_blank">HttpAccessLoggingFilter.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/beamly/playpen/blob/v0.2.1/src/main/scala/playpen/requestid/RequestIdAction.scala" target="_blank">RequestIdAction.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="play.api.mvc.EssentialFilter">EssentialFilter</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="play.api.mvc.ActionTransformer">ActionTransformer</span>[<span class="extype" name="play.api.mvc.Request">Request</span>, <a href="RequestIdRequest.html" class="extype" name="playpen.requestid.RequestIdRequest">RequestIdRequest</a>], <span class="extype" name="play.api.mvc.ActionRefiner">ActionRefiner</span>[<span class="extype" name="play.api.mvc.Request">Request</span>, <a href="RequestIdRequest.html" class="extype" name="playpen.requestid.RequestIdRequest">RequestIdRequest</a>], <span class="extype" name="play.api.mvc.ActionFunction">ActionFunction</span>[<span class="extype" name="play.api.mvc.Request">Request</span>, <a href="RequestIdRequest.html" class="extype" name="playpen.requestid.RequestIdRequest">RequestIdRequest</a>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -69,7 +69,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="playpen.HttpAccessLoggingFilter"><span>HttpAccessLoggingFilter</span></li><li class="in" name="play.api.mvc.EssentialFilter"><span>EssentialFilter</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="playpen.requestid.RequestIdTransformer"><span>RequestIdTransformer</span></li><li class="in" name="play.api.mvc.ActionTransformer"><span>ActionTransformer</span></li><li class="in" name="play.api.mvc.ActionRefiner"><span>ActionRefiner</span></li><li class="in" name="play.api.mvc.ActionFunction"><span>ActionFunction</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -107,8 +107,8 @@
         <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#playpen.HttpAccessLoggingFilter$@!=(x$1:Any):Boolean" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" />
+      <a href="../../index.html#playpen.requestid.RequestIdTransformer$@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
@@ -124,8 +124,8 @@
         <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Int" class="extype" target="_top">Int</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#playpen.HttpAccessLoggingFilter$@##():Int" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" />
+      <a href="../../index.html#playpen.requestid.RequestIdTransformer$@##():Int" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
@@ -141,28 +141,28 @@
         <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#playpen.HttpAccessLoggingFilter$@==(x$1:Any):Boolean" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" />
+      <a href="../../index.html#playpen.requestid.RequestIdTransformer$@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="playpen.HttpAccessLoggingFilter#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="apply(nextFilter:play.api.mvc.EssentialAction):play.api.mvc.EssentialAction"></a>
-      <a id="apply(EssentialAction):EssentialAction"></a>
+    </li><li name="play.api.mvc.ActionFunction#andThen" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="andThen[Q[_]](other:play.api.mvc.ActionFunction[P,Q]):play.api.mvc.ActionFunction[R,Q]"></a>
+      <a id="andThen[Q[_]](ActionFunction[RequestIdRequest,Q]):ActionFunction[Request,Q]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="nextFilter">nextFilter: <span class="extype" name="play.api.mvc.EssentialAction">EssentialAction</span></span>)</span><span class="result">: <span class="extype" name="play.api.mvc.EssentialAction">EssentialAction</span></span>
+        <span class="name">andThen</span><span class="tparams">[<span name="Q">Q<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="other">other: <span class="extype" name="play.api.mvc.ActionFunction">ActionFunction</span>[<a href="RequestIdRequest.html" class="extype" name="playpen.requestid.RequestIdRequest">RequestIdRequest</a>, <span class="extype" name="play.api.mvc.ActionFunction.andThen.Q">Q</span>]</span>)</span><span class="result">: <span class="extype" name="play.api.mvc.ActionFunction">ActionFunction</span>[<span class="extype" name="play.api.mvc.Request">Request</span>, <span class="extype" name="play.api.mvc.ActionFunction.andThen.Q">Q</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#playpen.HttpAccessLoggingFilter$@apply(nextFilter:play.api.mvc.EssentialAction):play.api.mvc.EssentialAction" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" />
+      <a href="../../index.html#playpen.requestid.RequestIdTransformer$@andThen[Q[_]](other:play.api.mvc.ActionFunction[P,Q]):play.api.mvc.ActionFunction[R,Q]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
       </a>
     </span>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="playpen.HttpAccessLoggingFilter">HttpAccessLoggingFilter</a> → EssentialFilter</dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>ActionFunction</dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -175,8 +175,8 @@
         <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#playpen.HttpAccessLoggingFilter$@asInstanceOf[T0]:T0" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" />
+      <a href="../../index.html#playpen.requestid.RequestIdTransformer$@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
@@ -192,17 +192,51 @@
         <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#playpen.HttpAccessLoggingFilter$@clone():Object" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" />
+      <a href="../../index.html#playpen.requestid.RequestIdTransformer$@clone():Object" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
       </a>
     </span>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
       <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="play.api.mvc.ActionFunction#compose" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="compose(other:play.api.mvc.ActionBuilder[R]):play.api.mvc.ActionBuilder[P]"></a>
+      <a id="compose(ActionBuilder[Request]):ActionBuilder[RequestIdRequest]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">compose</span><span class="params">(<span name="other">other: <span class="extype" name="play.api.mvc.ActionBuilder">ActionBuilder</span>[<span class="extype" name="play.api.mvc.Request">Request</span>]</span>)</span><span class="result">: <span class="extype" name="play.api.mvc.ActionBuilder">ActionBuilder</span>[<a href="RequestIdRequest.html" class="extype" name="playpen.requestid.RequestIdRequest">RequestIdRequest</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#playpen.requestid.RequestIdTransformer$@compose(other:play.api.mvc.ActionBuilder[R]):play.api.mvc.ActionBuilder[P]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>ActionFunction</dd></dl></div>
+    </li><li name="play.api.mvc.ActionFunction#compose" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="compose[Q[_]](other:play.api.mvc.ActionFunction[Q,R]):play.api.mvc.ActionFunction[Q,P]"></a>
+      <a id="compose[Q[_]](ActionFunction[Q,Request]):ActionFunction[Q,RequestIdRequest]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">compose</span><span class="tparams">[<span name="Q">Q<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="other">other: <span class="extype" name="play.api.mvc.ActionFunction">ActionFunction</span>[<span class="extype" name="play.api.mvc.ActionFunction.compose.Q">Q</span>, <span class="extype" name="play.api.mvc.Request">Request</span>]</span>)</span><span class="result">: <span class="extype" name="play.api.mvc.ActionFunction">ActionFunction</span>[<span class="extype" name="play.api.mvc.ActionFunction.compose.Q">Q</span>, <a href="RequestIdRequest.html" class="extype" name="playpen.requestid.RequestIdRequest">RequestIdRequest</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#playpen.requestid.RequestIdTransformer$@compose[Q[_]](other:play.api.mvc.ActionFunction[Q,R]):play.api.mvc.ActionFunction[Q,P]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>ActionFunction</dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -215,8 +249,8 @@
         <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#playpen.HttpAccessLoggingFilter$@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" />
+      <a href="../../index.html#playpen.requestid.RequestIdTransformer$@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
@@ -232,11 +266,28 @@
         <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#playpen.HttpAccessLoggingFilter$@equals(x$1:Any):Boolean" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" />
+      <a href="../../index.html#playpen.requestid.RequestIdTransformer$@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="play.api.mvc.ActionFunction#executionContext" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="executionContext:scala.concurrent.ExecutionContext"></a>
+      <a id="executionContext:ExecutionContext"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">executionContext</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.concurrent.ExecutionContext" class="extype" target="_top">ExecutionContext</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#playpen.requestid.RequestIdTransformer$@executionContext:scala.concurrent.ExecutionContext" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>ActionFunction</dd></dl></div>
     </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <a id="finalize():Unit"></a>
@@ -249,11 +300,11 @@
         <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#playpen.HttpAccessLoggingFilter$@finalize():Unit" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" />
+      <a href="../../index.html#playpen.requestid.RequestIdTransformer$@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
       </a>
     </span>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
       <span class="symbol">classOf[java.lang.Throwable]</span>
@@ -272,8 +323,8 @@
         <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#playpen.HttpAccessLoggingFilter$@getClass():Class[_]" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" />
+      <a href="../../index.html#playpen.requestid.RequestIdTransformer$@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
@@ -289,11 +340,28 @@
         <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Int" class="extype" target="_top">Int</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#playpen.HttpAccessLoggingFilter$@hashCode():Int" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" />
+      <a href="../../index.html#playpen.requestid.RequestIdTransformer$@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="play.api.mvc.ActionRefiner#invokeBlock" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="invokeBlock[A](request:R[A],block:P[A]=&gt;scala.concurrent.Future[play.api.mvc.Result]):scala.concurrent.Future[play.api.mvc.Result]"></a>
+      <a id="invokeBlock[A](Request[A],(RequestIdRequest[A])⇒Future[Result]):Future[Result]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">invokeBlock</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="request">request: <span class="extype" name="play.api.mvc.Request">Request</span>[<span class="extype" name="play.api.mvc.ActionRefiner.invokeBlock.A">A</span>]</span>, <span name="block">block: (<a href="RequestIdRequest.html" class="extype" name="playpen.requestid.RequestIdRequest">RequestIdRequest</a>[<span class="extype" name="play.api.mvc.ActionRefiner.invokeBlock.A">A</span>]) ⇒ <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="play.api.mvc.Result">Result</span>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="play.api.mvc.Result">Result</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#playpen.requestid.RequestIdTransformer$@invokeBlock[A](request:R[A],block:P[A]=&gt;scala.concurrent.Future[play.api.mvc.Result]):scala.concurrent.Future[play.api.mvc.Result]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>ActionRefiner → ActionFunction</dd></dl></div>
     </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <a id="isInstanceOf[T0]:Boolean"></a>
@@ -306,8 +374,8 @@
         <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#playpen.HttpAccessLoggingFilter$@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" />
+      <a href="../../index.html#playpen.requestid.RequestIdTransformer$@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
@@ -323,8 +391,8 @@
         <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#playpen.HttpAccessLoggingFilter$@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" />
+      <a href="../../index.html#playpen.requestid.RequestIdTransformer$@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
@@ -340,8 +408,8 @@
         <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#playpen.HttpAccessLoggingFilter$@notify():Unit" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" />
+      <a href="../../index.html#playpen.requestid.RequestIdTransformer$@notify():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
@@ -357,11 +425,28 @@
         <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#playpen.HttpAccessLoggingFilter$@notifyAll():Unit" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" />
+      <a href="../../index.html#playpen.requestid.RequestIdTransformer$@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="play.api.mvc.ActionTransformer#refine" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="refine[A](request:R[A]):scala.concurrent.Future[scala.util.Right[Nothing,P[A]]]"></a>
+      <a id="refine[A](Request[A]):Future[Right[Nothing,RequestIdRequest[A]]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">refine</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="request">request: <span class="extype" name="play.api.mvc.Request">Request</span>[<span class="extype" name="play.api.mvc.ActionTransformer.refine.A">A</span>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.util.Right">Right</span>[<span class="extype" name="scala.Nothing">Nothing</span>, <a href="RequestIdRequest.html" class="extype" name="playpen.requestid.RequestIdRequest">RequestIdRequest</a>[<span class="extype" name="play.api.mvc.ActionTransformer.refine.A">A</span>]]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#playpen.requestid.RequestIdTransformer$@refine[A](request:R[A]):scala.concurrent.Future[scala.util.Right[Nothing,P[A]]]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>ActionTransformer → ActionRefiner</dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -374,8 +459,8 @@
         <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#playpen.HttpAccessLoggingFilter$@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" />
+      <a href="../../index.html#playpen.requestid.RequestIdTransformer$@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
@@ -391,11 +476,28 @@
         <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#playpen.HttpAccessLoggingFilter$@toString():String" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" />
+      <a href="../../index.html#playpen.requestid.RequestIdTransformer$@toString():String" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="playpen.requestid.RequestIdTransformer#transform" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="transform[A](request:play.api.mvc.Request[A]):scala.concurrent.Future[playpen.requestid.RequestIdRequest[A]]"></a>
+      <a id="transform[A](Request[A]):Future[RequestIdRequest[A]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">transform</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="request">request: <span class="extype" name="play.api.mvc.Request">Request</span>[<span class="extype" name="playpen.requestid.RequestIdTransformer.transform.A">A</span>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<a href="RequestIdRequest.html" class="extype" name="playpen.requestid.RequestIdRequest">RequestIdRequest</a>[<span class="extype" name="playpen.requestid.RequestIdTransformer.transform.A">A</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#playpen.requestid.RequestIdTransformer$@transform[A](request:play.api.mvc.Request[A]):scala.concurrent.Future[playpen.requestid.RequestIdRequest[A]]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="playpen.requestid.RequestIdTransformer">RequestIdTransformer</a> → ActionTransformer</dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>
@@ -408,8 +510,8 @@
         <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#playpen.HttpAccessLoggingFilter$@wait():Unit" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" />
+      <a href="../../index.html#playpen.requestid.RequestIdTransformer$@wait():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
@@ -431,8 +533,8 @@
         <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#playpen.HttpAccessLoggingFilter$@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" />
+      <a href="../../index.html#playpen.requestid.RequestIdTransformer$@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
@@ -454,8 +556,8 @@
         <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#playpen.HttpAccessLoggingFilter$@wait(x$1:Long):Unit" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" />
+      <a href="../../index.html#playpen.requestid.RequestIdTransformer$@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
@@ -474,8 +576,12 @@
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="play.api.mvc.EssentialFilter">
-              <h3>Inherited from <span class="extype" name="play.api.mvc.EssentialFilter">EssentialFilter</span></h3>
+        <div class="parent" name="play.api.mvc.ActionTransformer">
+              <h3>Inherited from <span class="extype" name="play.api.mvc.ActionTransformer">ActionTransformer</span>[<span class="extype" name="play.api.mvc.Request">Request</span>, <a href="RequestIdRequest.html" class="extype" name="playpen.requestid.RequestIdRequest">RequestIdRequest</a>]</h3>
+            </div><div class="parent" name="play.api.mvc.ActionRefiner">
+              <h3>Inherited from <span class="extype" name="play.api.mvc.ActionRefiner">ActionRefiner</span>[<span class="extype" name="play.api.mvc.Request">Request</span>, <a href="RequestIdRequest.html" class="extype" name="playpen.requestid.RequestIdRequest">RequestIdRequest</a>]</h3>
+            </div><div class="parent" name="play.api.mvc.ActionFunction">
+              <h3>Inherited from <span class="extype" name="play.api.mvc.ActionFunction">ActionFunction</span>[<span class="extype" name="play.api.mvc.Request">Request</span>, <a href="RequestIdRequest.html" class="extype" name="playpen.requestid.RequestIdRequest">RequestIdRequest</a>]</h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
