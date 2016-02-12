@@ -78,10 +78,12 @@ object Build extends Build {
 //    Wart.Return, Wart.Serializable, Wart.TryPartial, Wart.Var, Wart.ListOps)
 
     resolvers += "typesafe-releases" at "http://repo.typesafe.com/typesafe/releases/",
+    resolvers += "scalaz-bintray" at "https://dl.bintray.com/scalaz/releases",
 
     libraryDependencies += "joda-time"          % "joda-time"    % "2.5",
     libraryDependencies += "org.joda"           % "joda-convert" % "1.2",
     libraryDependencies += "com.typesafe.play" %% "play"         % "2.4.0",
+    libraryDependencies += "com.typesafe.play" %% "play-specs2"  % "2.4.0" % Test,
     libraryDependencies += "org.slf4j"          % "slf4j-api"    % "1.7.7",
 
     typelevelDefaultSettings,
