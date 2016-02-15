@@ -1,21 +1,36 @@
 package playpen.ws
 
 import com.ning.http.client._
-import play.api.libs.ws.ning.{ NingAsyncHttpClientConfigBuilder, NingWSClient, NingWSClientConfig, NingWSRequest }
+import play.api.libs.ws.ning.{ NingWSClient, NingWSRequest }
 import play.api.libs.ws.ssl.SystemConfiguration
 import play.api.libs.ws.{ EmptyBody, WSRequest }
 import playpen.requestid.{ RequestId, RequestIdHeader }
 
-case class TracingNingWSClient(config: AsyncHttpClientConfig) extends TracingWSClient {
+final case class TracingNingWSClient(config: AsyncHttpClientConfig) extends TracingWSClient {
   private val ningWsClient = NingWSClient(config)
 
   def underlying[T] = ningWsClient.underlying[T]
 
   def close() = ningWsClient.close()
 
-  def url(url: String)(implicit requestId: RequestId): WSRequest = NingWSRequest(ningWsClient, url, "GET", EmptyBody, Map(RequestIdHeader.header -> Seq(requestId.id)), Map(), None, None, None, None, None, None, None)
+  def url(url: String)(implicit requestId: RequestId): WSRequest =
+    NingWSRequest(
+      ningWsClient,
+      url,
+      "GET",
+      EmptyBody,
+      Map(
+        RequestIdHeader.header -> Seq(requestId.id)
+      ),
+      Map(),
+      None,
+      None,
+      None,
+      None,
+      None,
+      None,
+      None)
 }
-
 
 object TracingNingWSClient {
   /**
@@ -25,7 +40,8 @@ object TracingNingWSClient {
     *
     * {{{
     *   implicit val requestId: RequestId = ..
-    *   val client = TracingNingWSClient()
+    *   val tracingClientConfig: TracingWSClientConfig = ...
+    *   val client = TracingNingWSClient(tracingClientConfig)
     *   val request = client.url(someUrl).get()
     *   request.foreach { response =>
     *     doSomething(response)
@@ -35,13 +51,12 @@ object TracingNingWSClient {
     *
     * @param config configuration settings
     */
-  def apply(config: NingWSClientConfig = NingWSClientConfig()): TracingNingWSClient = {
-    val client = new TracingNingWSClient(new NingAsyncHttpClientConfigBuilder(config).build())
-    new SystemConfiguration().configure(config.wsClientConfig)
+  def apply(config: TracingWSClientConfig): TracingNingWSClient = {
+    val client = new TracingNingWSClient(new TracingNingAsyncHttpClientConfigBuilder(config).build())
+    new SystemConfiguration().configure(config.ningWSClientConfig.wsClientConfig)
     client
   }
 }
-
 
 trait TracingWSClient {
 
