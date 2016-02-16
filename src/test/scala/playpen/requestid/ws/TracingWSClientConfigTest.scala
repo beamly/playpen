@@ -1,4 +1,4 @@
-package playpen.ws
+package playpen.requestid.ws
 
 import org.specs2.mutable.Specification
 import play.api.libs.ws.ning.NingWSClientConfig

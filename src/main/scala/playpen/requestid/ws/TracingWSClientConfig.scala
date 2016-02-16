@@ -1,4 +1,4 @@
-package playpen.ws
+package playpen.requestid.ws
 
 import javax.inject.{ Inject, Provider, Singleton }
 

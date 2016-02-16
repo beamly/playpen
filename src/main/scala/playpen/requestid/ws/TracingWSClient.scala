@@ -1,4 +1,4 @@
-package playpen.ws
+package playpen.requestid.ws
 
 import com.ning.http.client._
 import play.api.libs.ws.ning.{ NingWSClient, NingWSRequest }

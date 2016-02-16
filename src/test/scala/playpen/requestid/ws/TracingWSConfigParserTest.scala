@@ -1,4 +1,4 @@
-package playpen.ws
+package playpen.requestid.ws
 
 import com.typesafe.config.ConfigFactory
 import org.specs2.mutable.Specification
@@ -21,6 +21,8 @@ class TracingWSConfigParserTest extends Specification {
       actual.userAgent mustEqual "FakeUserAgent"
 
     }
+
+
   }
 
   def parseThis(input: String)(implicit app: play.api.Application) = {

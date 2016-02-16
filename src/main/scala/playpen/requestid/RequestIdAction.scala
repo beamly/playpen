@@ -1,7 +1,5 @@
 package playpen.requestid
 
-import java.util.UUID
-
 import play.api.libs.concurrent.Execution.Implicits.defaultContext
 import play.api.mvc._
 import playpen.requestid.RequestIdHeader._
@@ -13,7 +11,7 @@ class RequestIdRequest[A](val requestId: RequestId, request: Request[A]) extends
 
 object RequestIdTransformer extends ActionTransformer[Request, RequestIdRequest] {
 
-  private def extractRequestId[A](request: Request[A]) = request.headers.get(header).getOrElse("req" + UUID.randomUUID().toString)
+  private def extractRequestId[A](request: Request[A]) = request.headers.get(header).getOrElse(RequestIdGenerator.random.id)
 
   def transform[A](request: Request[A]) = Future.successful {
     val requestId = extractRequestId(request)
