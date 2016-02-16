@@ -13,8 +13,8 @@ import play.api.{ Configuration, Environment }
   * @param userAgent          The user-agent to use when making a request.
   * @param ningWSClientConfig The Ning client config.
   */
-case class TracingWSClientConfig(userAgent: String,
-                                 ningWSClientConfig: NingWSClientConfig = NingWSClientConfig())
+final case class TracingWSClientConfig(userAgent: String,
+                                       ningWSClientConfig: NingWSClientConfig = NingWSClientConfig())
 
 @Singleton
 class TracingWSConfigParser @Inject()(ningWSClientConfig: NingWSClientConfig,
@@ -35,8 +35,13 @@ class TracingWSConfigParser @Inject()(ningWSClientConfig: NingWSClientConfig,
 
 class TracingNingAsyncHttpClientConfigBuilder(tracingWsClientConfig: TracingWSClientConfig)
   extends NingAsyncHttpClientConfigBuilder(tracingWsClientConfig.ningWSClientConfig) {
-  override def configure(): Builder = {
-    super.configure()
-    builder.setUserAgent(tracingWsClientConfig.userAgent)
+
+  override protected val addCustomSettings: (Builder) => Builder = _.setUserAgent(tracingWsClientConfig.userAgent)
+
+  override def modifyUnderlying(modify: (Builder) => Builder): TracingNingAsyncHttpClientConfigBuilder = {
+    new TracingNingAsyncHttpClientConfigBuilder(tracingWsClientConfig) {
+      override val addCustomSettings = modify compose TracingNingAsyncHttpClientConfigBuilder.this.addCustomSettings
+      override val builder = TracingNingAsyncHttpClientConfigBuilder.this.builder
+    }
   }
 }

@@ -19,9 +19,14 @@ class TracingWSConfigParserTest extends Specification {
         """.stripMargin)
 
       actual.userAgent mustEqual "FakeUserAgent"
-
     }
 
+    "parse useragent from config" in new WithApplication {
+      parseThis(
+        """
+          |play.ws.useragent = null
+        """.stripMargin) must throwAn[Exception]
+    }
 
   }
 

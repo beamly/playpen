@@ -1,0 +1,4 @@
+2016-02-16 11:55:55,725 [INFO] from play.api.libs.concurrent.ActorSystemProvider in specs2.fixed.env-74345142-7 - Starting application default Akka system: application
+2016-02-16 11:55:55,725 [INFO] from play.api.libs.concurrent.ActorSystemProvider in specs2.fixed.env-74345142-5 - Starting application default Akka system: application
+2016-02-16 11:55:55,792 [INFO] from play.api.libs.concurrent.ActorSystemProvider in specs2.fixed.env-74345142-5 - Shutdown application default Akka system: application
+2016-02-16 11:55:55,831 [INFO] from play.api.libs.concurrent.ActorSystemProvider in specs2.fixed.env-74345142-7 - Shutdown application default Akka system: application
