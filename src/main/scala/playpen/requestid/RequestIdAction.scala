@@ -32,5 +32,6 @@ object RequestIdAction extends ActionBuilder[RequestIdRequest] {
 
 
 object RequestIdHeader {
+  // Non-RFC headers
   val header = "X-Request-ID"
 }
