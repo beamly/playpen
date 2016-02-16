@@ -6,10 +6,9 @@ import org.slf4j.{LoggerFactory, MDC}
 import play.api.http.HeaderNames._
 import play.api.libs.concurrent.Execution.Implicits.defaultContext
 import play.api.mvc._
-import playpen.requestid.RequestIdHeader
 
 import scala.collection.JavaConverters._
-import java.{util ⇒ ju}
+import java.{util => ju}
 
 object HttpAccessLoggingFilter extends EssentialFilter {
   private val log = LoggerFactory getLogger "HttpAccessLogger"
@@ -33,7 +32,7 @@ object HttpAccessLoggingFilter extends EssentialFilter {
           "req.userAgent"   → (rh.headers get USER_AGENT getOrElse "-"),
         // TODO: Figure out how to really do Play response size
           "rsp.size"        → (result.header.headers get CONTENT_LENGTH getOrElse "0"),
-          "requestId"       → (result.header.headers get RequestIdHeader.header getOrElse "-"))
+          "requestId"       → (result.header.headers get RequestId.HTTP_REQUEST_HEADER getOrElse "-"))
 
         val oldContextMap = Option(MDC.getCopyOfContextMap) getOrElse new ju.HashMap[String, String]()
         try {

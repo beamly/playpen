@@ -1,10 +1,9 @@
-package playpen.requestid.ws
+package playpen
 
 import com.ning.http.client._
 import play.api.libs.ws.WSRequest
 import play.api.libs.ws.ning.NingWSClient
 import play.api.libs.ws.ssl.SystemConfiguration
-import playpen.requestid.{ RequestId, RequestIdHeader }
 
 final case class TracingNingWSClient(config: AsyncHttpClientConfig) extends TracingWSClient {
   private val ningWsClient = NingWSClient(config)
@@ -12,12 +11,12 @@ final case class TracingNingWSClient(config: AsyncHttpClientConfig) extends Trac
   def close() = ningWsClient.close()
 
   def url(url: String)(implicit requestId: RequestId): WSRequest =
-    ningWsClient url url withHeaders (RequestIdHeader.header -> requestId.id)
+    ningWsClient url url withHeaders (RequestId.HTTP_REQUEST_HEADER -> requestId.id)
 }
 
 object TracingNingWSClient {
   /**
-    * Convenient factory method that uses a [[playpen.requestid.ws.TracingWSClientConfig]] value for configuration instead of an [[AsyncHttpClientConfig]].
+    * Convenient factory method that uses a [[TracingWSClientConfig]] value for configuration instead of an [[AsyncHttpClientConfig]].
     *
     * Typical usage:
     *

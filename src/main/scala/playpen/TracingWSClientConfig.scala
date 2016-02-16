@@ -1,10 +1,10 @@
-package playpen.requestid.ws
-
-import javax.inject.{ Inject, Provider, Singleton }
+package playpen
 
 import com.ning.http.client.AsyncHttpClientConfig.Builder
 import play.api.libs.ws.ning.{ NingAsyncHttpClientConfigBuilder, NingWSClientConfig }
 import play.api.{ Configuration, Environment }
+
+import javax.inject.{ Inject, Provider, Singleton }
 
 
 /**

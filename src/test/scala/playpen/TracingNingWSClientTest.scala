@@ -1,9 +1,8 @@
-package playpen.requestid.ws
-
-import java.util.UUID
+package playpen
 
 import org.specs2.mutable.Specification
-import playpen.requestid.{ RequestId, RequestIdHeader }
+
+import java.util.UUID
 
 class TracingNingWSClientTest extends Specification {
 
@@ -16,21 +15,21 @@ class TracingNingWSClientTest extends Specification {
       implicit val requestId = RequestId(id)
       val tracingClient = TracingNingWSClient(config)
       val request = tracingClient.url("http://playframework.com/")
-      request.headers must contain(RequestIdHeader.header -> Seq(id))
+      request.headers must contain(RequestId.HTTP_REQUEST_HEADER -> Seq(id))
 
     }
 
     "add the correct header using the implicit random RequestId generation" in {
-      import playpen.requestid.RequestIdGenerator.Implicits.random
+      import playpen.RequestId.Implicits.random
       val config = TracingWSClientConfig("test-agent")
 
       val tracingClient = TracingNingWSClient(config)
       val request = tracingClient.url("http://playframework.com/")
 
-      request.headers must haveKey(RequestIdHeader.header)
-      request.headers(RequestIdHeader.header) must have size (1)
+      request.headers must haveKey(RequestId.HTTP_REQUEST_HEADER)
+      request.headers(RequestId.HTTP_REQUEST_HEADER) must have size (1)
 
-      val actualRequestId = request.headers(RequestIdHeader.header).head
+      val actualRequestId = request.headers(RequestId.HTTP_REQUEST_HEADER).head
       actualRequestId must startWith("req")
       UUID.fromString(actualRequestId.replaceFirst("req", "")) must not(throwA[Exception])
     }

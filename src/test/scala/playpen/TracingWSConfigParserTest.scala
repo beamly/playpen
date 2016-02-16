@@ -1,4 +1,4 @@
-package playpen.requestid.ws
+package playpen
 
 import com.typesafe.config.ConfigFactory
 import org.specs2.mutable.Specification
