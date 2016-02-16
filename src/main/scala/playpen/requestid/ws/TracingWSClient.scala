@@ -9,8 +9,6 @@ import playpen.requestid.{ RequestId, RequestIdHeader }
 final case class TracingNingWSClient(config: AsyncHttpClientConfig) extends TracingWSClient {
   private val ningWsClient = NingWSClient(config)
 
-  def underlying[T] = ningWsClient.underlying[T]
-
   def close() = ningWsClient.close()
 
   def url(url: String)(implicit requestId: RequestId): WSRequest =
@@ -59,14 +57,6 @@ object TracingNingWSClient {
 }
 
 trait TracingWSClient {
-
-  /**
-    * The underlying implementation of the client, if any.  You must cast explicitly to the type you want.
-    *
-    * @tparam T the type you are expecting (i.e. isInstanceOf)
-    * @return the backing class.
-    */
-  def underlying[T]: T
 
   /**
     * Generates a request holder which can be used to build requests.
