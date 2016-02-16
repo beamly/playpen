@@ -83,6 +83,7 @@ object Build extends Build {
     libraryDependencies += "joda-time"          % "joda-time"    % "2.5",
     libraryDependencies += "org.joda"           % "joda-convert" % "1.2",
     libraryDependencies += "com.typesafe.play" %% "play"         % "2.4.0",
+    libraryDependencies += "com.typesafe.play" %% "play-ws"      % "2.4.0",
     libraryDependencies += "com.typesafe.play" %% "play-specs2"  % "2.4.0" % Test,
     libraryDependencies += "org.slf4j"          % "slf4j-api"    % "1.7.7",
 
