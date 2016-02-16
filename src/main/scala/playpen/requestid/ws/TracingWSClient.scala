@@ -1,9 +1,9 @@
 package playpen.requestid.ws
 
 import com.ning.http.client._
-import play.api.libs.ws.ning.{ NingWSClient, NingWSRequest }
+import play.api.libs.ws.WSRequest
+import play.api.libs.ws.ning.NingWSClient
 import play.api.libs.ws.ssl.SystemConfiguration
-import play.api.libs.ws.{ EmptyBody, WSRequest }
 import playpen.requestid.{ RequestId, RequestIdHeader }
 
 final case class TracingNingWSClient(config: AsyncHttpClientConfig) extends TracingWSClient {
@@ -12,22 +12,7 @@ final case class TracingNingWSClient(config: AsyncHttpClientConfig) extends Trac
   def close() = ningWsClient.close()
 
   def url(url: String)(implicit requestId: RequestId): WSRequest =
-    NingWSRequest(
-      ningWsClient,
-      url,
-      "GET",
-      EmptyBody,
-      Map(
-        RequestIdHeader.header -> Seq(requestId.id)
-      ),
-      Map(),
-      None,
-      None,
-      None,
-      None,
-      None,
-      None,
-      None)
+    ningWsClient url url withHeaders (RequestIdHeader.header -> requestId.id)
 }
 
 object TracingNingWSClient {
