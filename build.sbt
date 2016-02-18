@@ -68,6 +68,8 @@ pomExtra := pomExtra.value ++ {
     </scm>
 }
 
+bintrayReleaseOnPublish in ThisBuild := false
+
 releaseCrossBuild := true
 
 watchSources ++= (baseDirectory.value * "*.sbt").get
