@@ -3,9 +3,9 @@ import SbtMisc._
 lazy val playpen = project in file(".")
 
 organization := "com.beamly.playpen"
-    licenses := Seq("Apache License, Version 2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0.txt"))
+    licenses := Seq(("Apache-2.0", url("https://www.apache.org/licenses/LICENSE-2.0")))
  description := "A way to Play! safely"
-    homepage := Some(url(s"https://github.com/beamly/playpen"))
+    homepage := Some(url("https://github.com/beamly/playpen"))
    startYear := Some(2014)
 
       scalaVersion := "2.11.7"
