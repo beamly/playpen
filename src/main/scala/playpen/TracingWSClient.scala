@@ -16,7 +16,7 @@ final case class TracingNingWSClient(config: AsyncHttpClientConfig) extends Trac
 
 object TracingNingWSClient {
   /**
-    * Convenient factory method that uses a [[TracingWSClientConfig]] value for configuration instead of an [[AsyncHttpClientConfig]].
+    * Convenient factory method that uses a [[TracingWSClientConfig]] value for configuration instead of an AsyncHttpClientConfig.
     *
     * Typical usage:
     *
