@@ -5,26 +5,28 @@ import play.api.mvc._
 
 import scala.concurrent.Future
 
+class RequestContextRequest[A](val requestContext: RequestContext, request: Request[A]) extends WrappedRequest[A](request) {
 
-class RequestIdRequest[A](val requestId: RequestId, request: Request[A]) extends WrappedRequest[A](request)
+  def requestId= requestContext.requestId
+}
 
-object RequestIdTransformer extends ActionTransformer[Request, RequestIdRequest] {
+object RequestContextTransformer extends ActionTransformer[Request, RequestContextRequest] {
 
   private def extractRequestId[A](request: Request[A]) = request.headers.get(RequestId.HTTP_REQUEST_HEADER).getOrElse(RequestId.random.id)
 
   def transform[A](request: Request[A]) = Future.successful {
     val requestId = extractRequestId(request)
-    new RequestIdRequest(RequestId(requestId), request)
+    new RequestContextRequest(RequestContext(RequestId(requestId)), request)
   }
 }
 
-object RequestIdAction extends ActionBuilder[RequestIdRequest] {
-  def invokeBlock[A](request: Request[A], block: RequestIdRequest[A] => Future[Result]): Future[Result] = {
+object RequestContextAction extends ActionBuilder[RequestContextRequest] {
+  def invokeBlock[A](request: Request[A], block: RequestContextRequest[A] => Future[Result]): Future[Result] = {
     for {
-      requestIdRequest <- RequestIdTransformer.transform[A](request)
-      result <- block(requestIdRequest)
+      requestContextRequest <- RequestContextTransformer.transform[A](request)
+      result <- block(requestContextRequest)
     } yield {
-      result.withHeaders(RequestId.HTTP_REQUEST_HEADER -> requestIdRequest.requestId.id)
+      result.withHeaders(RequestId.HTTP_REQUEST_HEADER -> requestContextRequest.requestId.id)
     }
   }
 }

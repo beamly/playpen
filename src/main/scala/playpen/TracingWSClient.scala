@@ -10,8 +10,8 @@ final case class TracingNingWSClient(config: AsyncHttpClientConfig) extends Trac
 
   def close() = ningWsClient.close()
 
-  def url(url: String)(implicit requestId: RequestId): WSRequest =
-    ningWsClient url url withHeaders (RequestId.HTTP_REQUEST_HEADER -> requestId.id)
+  def url(url: String)(implicit requestContext: RequestContext): WSRequest =
+    ningWsClient url url withHeaders (RequestId.HTTP_REQUEST_HEADER -> requestContext.requestId.id)
 }
 
 object TracingNingWSClient {
@@ -48,7 +48,7 @@ trait TracingWSClient {
     * @param url The base URL to make HTTP requests to.
     * @return a WSRequestHolder
     */
-  def url(url: String)(implicit requestId: RequestId): WSRequest
+  def url(url: String)(implicit requestContext: RequestContext): WSRequest
 
   /** Closes this client, and releases underlying resources. */
   def close(): Unit
