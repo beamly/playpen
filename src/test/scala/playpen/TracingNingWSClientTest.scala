@@ -12,7 +12,7 @@ class TracingNingWSClientTest extends Specification {
     "add the correct header for the implicit RequestId in scope" in {
       val config = TracingWSClientConfig("test-agent")
       val id = "test-id"
-      implicit val requestId = RequestId(id)
+      implicit val requestContext = RequestContext(RequestId(id))
       val tracingClient = TracingNingWSClient(config)
       val request = tracingClient.url("http://playframework.com/")
       request.headers must contain(RequestId.HTTP_REQUEST_HEADER -> Seq(id))
@@ -20,7 +20,7 @@ class TracingNingWSClientTest extends Specification {
     }
 
     "add the correct header using the implicit random RequestId generation" in {
-      import playpen.RequestId.Implicits.random
+      import playpen.RequestContext.Implicits.random
       val config = TracingWSClientConfig("test-agent")
 
       val tracingClient = TracingNingWSClient(config)

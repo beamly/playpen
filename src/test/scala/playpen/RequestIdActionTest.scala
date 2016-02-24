@@ -5,7 +5,7 @@ import play.api.test.{ FakeRequest, PlaySpecification }
 
 class RequestIdActionTest extends PlaySpecification {
 
-  val action: EssentialAction = RequestIdAction { request =>
+  val action: EssentialAction = RequestContextAction { request =>
     val value = request.requestId.id
     Results.Ok(value)
   }
