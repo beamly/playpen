@@ -9,7 +9,7 @@ organization := "com.beamly.playpen"
    startYear := Some(2014)
 
       scalaVersion := "2.11.7"
-crossScalaVersions := Seq("2.11.7", "2.10.6")
+crossScalaVersions := Seq(scalaVersion.value)
 
 scalacOptions ++= Seq("-encoding", "utf8")
 scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked", "-Xlint")
